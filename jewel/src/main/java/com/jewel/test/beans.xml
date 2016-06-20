@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jewel="http://jewel.com/schema/jewel"
+
+	xsi:schemaLocation="  
+
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd  
+
+http://jewel.com/schema/jewel http://jewel.com/schema/jewel.xsd">
+	<bean class="com.jewel.spring.SpringContextHolder"></bean>
+	<jewel:application id="app" name="demo-app"></jewel:application>
+	<jewel:registry id="zookeeper" address="zookeeper:127.0.0.1:1234"></jewel:registry>
+	<jewel:protocol name="jewel" port="9999"></jewel:protocol>
+	<jewel:service interface="com.jewl.test.IDemo" ref="demo"
+		version="v_1.0.0"></jewel:service>
+	<jewel:reference interface="com.jewl.test.IDemo"
+		version="v_1.0.0" registry="zookeeper"></jewel:reference>
+</beans>
