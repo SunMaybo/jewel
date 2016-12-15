@@ -13,6 +13,10 @@ public abstract class AbstractLoadCluster {
 		this.jewelProtocolPools = jewelProtocolPools;
 	}
 
+	public List<JewelProtocolPool> getJewelProtocolPools() {
+		return jewelProtocolPools;
+	}
+
 	public abstract JewelProtocolPool loadProtocolPool();
 
 	public abstract JewelProtocolPool loadProtocolPool(String key);
